@@ -1,0 +1,37 @@
+{
+  "name": "com.metrological.app.LightningTest",
+  "description": "Lightning Test",
+  "dependencies": {
+    "@lightningjs/sdk": "^4.8.3"
+  },
+  "scripts": {
+    "cypress": "cypress run",
+    "cypress:open": "cypress open"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "babel-eslint": "^10.0.3",
+    "cypress": "^10.3.1",
+    "cypress-image-diff-js": "^1.20.0",
+    "cypress-image-snapshot": "^4.0.1",
+    "cypress-visual-regression": "^1.7.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.1.0",
+    "js-base64": "^2.5.2",
+    "lint-staged": "^9.4.3",
+    "prettier": "^1.19.1"
+  }
+}
