@@ -6,7 +6,7 @@
   },
   "scripts": {
     "build": "lng dist",
-    "start": "http-server dist/es6",
+    "start": "lng dev",
     "cypress": "cypress run",
     "cypress:open": "cypress open"
   },

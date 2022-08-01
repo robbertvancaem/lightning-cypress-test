@@ -16,10 +16,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: 'dist'
+          if-no-files-found: error
           path: dist/es6
 
-      # - name: Cypress run
-      #   uses: cypress-io/github-action@v4
-      #   with:
-      #     build: npm run build
-      #     start: npm start
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          start: npm start
+          wait-on: 'http://localhost:8080'
