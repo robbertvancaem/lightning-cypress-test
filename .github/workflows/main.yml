@@ -8,9 +8,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
+      - name: Install and build
+        run: |
+          npm install
+          npm run build --if-present
+      - name: Store artifact
+        uses: actions/upload-artifact@v3
         with:
-          build: npm run build
-          start: npm start
+          name: 'dist'
+          path: dist/es6
+
+      # - name: Cypress run
+      #   uses: cypress-io/github-action@v4
+      #   with:
+      #     build: npm run build
+      #     start: npm start

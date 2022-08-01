@@ -5,6 +5,8 @@
     "@lightningjs/sdk": "^4.8.3"
   },
   "scripts": {
+    "build": "lng dist",
+    "start": "http-server dist/es6",
     "cypress": "cypress run",
     "cypress:open": "cypress open"
   },
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
+    "@lightningjs/cli": "^2.8.0",
     "babel-eslint": "^10.0.3",
     "cypress": "^10.3.1",
     "cypress-image-diff-js": "^1.20.0",
