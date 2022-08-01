@@ -1,5 +1,4 @@
 const { defineConfig } = require('cypress')
-const { addMatchImageSnapshotPlugin } = require('cypress-image-snapshot/plugin')
 const getCompareSnapshotsPlugin = require('cypress-visual-regression/dist/plugin')
 
 // https://docs.cypress.io/api/plugins/browser-launch-api#Examples

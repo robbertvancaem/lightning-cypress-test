@@ -27,7 +27,6 @@
     "babel-eslint": "^10.0.3",
     "cypress": "^10.3.1",
     "cypress-image-diff-js": "^1.20.0",
-    "cypress-image-snapshot": "^4.0.1",
     "cypress-visual-regression": "^1.7.0",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.7.0",
