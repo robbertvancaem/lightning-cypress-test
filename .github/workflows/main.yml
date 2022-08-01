@@ -24,3 +24,13 @@ jobs:
         with:
           start: npm start
           wait-on: 'http://localhost:8080'
+
+      - name: Upload Cypress artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: 'cypress'
+          path: |
+            'cypress/snapshots'
+            'cypress/videos'
+
+
