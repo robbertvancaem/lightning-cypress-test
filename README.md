@@ -1,5 +1,7 @@
 # Lightning Test
 
+[![Cypress Tests](https://github.com/robbertvancaem/lightning-cypress-test/actions/workflows/main.yml/badge.svg)](https://github.com/robbertvancaem/lightning-cypress-test/actions/workflows/main.yml)
+
 ## com.metrological.app.LightningTest
 
 ### Getting started
