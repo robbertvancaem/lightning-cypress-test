@@ -55,8 +55,8 @@ export default class App extends Lightning.Component {
 
   _handleEnter() {
     this.tag('Text').text.text = this._textToggle
-      ? "Let's start REAL Testing in CI!"
-      : "Let's start Image Diffing NOW in CI!"
+      ? "Let's start testing in CI!"
+      : "Let's start image diffing in CI!"
     this._textToggle = !this._textToggle
   }
 

@@ -7,10 +7,9 @@
   "scripts": {
     "build": "lng dist",
     "start": "lng dev",
+    "start:dist": "npx http-server dist/es6 -p 8080",
     "cypress": "cypress run",
-    "cypress:open": "cypress open",
-    "cypress:diff:base": "cypress run --env type=base",
-    "cypress:diff:ci": "cypress run --env type=actual"
+    "cypress:open": "cypress open"
   },
   "lint-staged": {
     "*.js": [

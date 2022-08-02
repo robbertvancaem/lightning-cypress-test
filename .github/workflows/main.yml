@@ -19,18 +19,15 @@ jobs:
           if-no-files-found: error
           path: dist/es6
 
-      - name: Cypress run
+      - name: Run Cypress
         uses: cypress-io/github-action@v4
         with:
-          start: npm start
+          start: npm start:dist
           wait-on: 'http://localhost:8080'
-
-      - name: Run image diff
-        run: npm run cypress:diff:ci
+          env: type=actual
 
       - name: Upload Cypress artifacts
         uses: actions/upload-artifact@v3
-        if: always()
         with:
           name: cypress
           path: |
