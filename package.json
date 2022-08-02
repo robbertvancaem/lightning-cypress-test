@@ -9,6 +9,7 @@
     "start": "lng dev",
     "start:dist": "npx http-server dist/es6 -p 8080",
     "cypress": "cypress run",
+    "cypress:generate-snapshots": "cypress run --env type=base",
     "cypress:open": "cypress open"
   },
   "lint-staged": {
