@@ -22,7 +22,7 @@ jobs:
       - name: Run Cypress
         uses: cypress-io/github-action@v4
         with:
-          start: npm start:dist
+          start: npm run start:dist
           wait-on: 'http://localhost:8080'
           env: type=actual
 
