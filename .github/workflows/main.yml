@@ -25,6 +25,9 @@ jobs:
           start: npm start
           wait-on: 'http://localhost:8080'
 
+      - name: Run image diff
+        run: npm run cypress:diff:ci
+
       - name: Upload Cypress artifacts
         uses: actions/upload-artifact@v3
         if: always()
@@ -34,9 +37,6 @@ jobs:
             cypress/snapshots
             cypress/videos
           if-no-files-found: error
-
-      - name: Run image diff
-        run: npm run cypress:diff:ci
 
 
 
