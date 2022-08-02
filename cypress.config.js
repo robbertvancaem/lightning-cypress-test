@@ -9,6 +9,7 @@ module.exports = defineConfig({
       // implement node event listeners here
       getCompareSnapshotsPlugin(on, config)
 
+      // These dimensions are NOT automatically inherited from viewportWidth and viewportHeight
       on('before:browser:launch', (browser = {}, launchOptions) => {
         if (browser.name === 'electron' && browser.isHeadless) {
           launchOptions.preferences.width = 1920
