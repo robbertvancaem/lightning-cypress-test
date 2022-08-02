@@ -8,14 +8,14 @@ Cypress is already perfectly capable of doing so, but it's mostly used when ther
 
 ## Overview {#overview}
 To add visual regression testing into a project, the following steps should be taken:
-- [Installing dependencies](#dependencies)
-- [Configuring Cypress](#configuration)
-- [Writing Cypress tests](#writing)
-- [Generating base snapshots](#snapshots)
-- [Building, serving and image diffing in CI](#ci)
-- [Analysing artifacts](#artifacts)
+- [Installing dependencies](#installing-dependencies)
+- [Configuring Cypress](#configuring-cypress)
+- [Writing Cypress tests](#writing-cypress-tests)
+- [Generating base snapshots](#generating-base-snapshots)
+- [Building, serving and image diffing in CI](#building-serving-and-image-diffing-in-ci)
+- [Analysing artifacts](#analysingartifacts)
 
-## Installing dependencies {#dependencies}
+## Installing dependencies
 
 Run the following command in the working directory to install the dependencies (as `devDependencies`)
 
@@ -23,7 +23,7 @@ Run the following command in the working directory to install the dependencies (
 
 \* The `@lightningjs/cli` package needs to be installed so that a build can be made when the code is pushed to Github
 
-## Configuring Cypress {#configuration}
+## Configuring Cypress
 Cypress is responsible for running a headless browser and visiting some routes as if a user would do so. This tool also allows you to stub external API calls and mimick user interactions, such as typing text into a field or pressing the 'Enter' key.
 
 When Cypress is installed, it will yield a couple of directories and files by default:
@@ -40,9 +40,9 @@ When Cypress is installed, it will yield a couple of directories and files by de
     |-- e2e.js          # Only imports 'commands.js'
 ```
 
-## Writing Cypress tests {#writing}
-## Generating base snapshots {#snapshots}
+## Writing Cypress tests
+## Generating base snapshots
 
-## Building, serving and image diffing in CI {#ci}
+## Building, serving and image diffing in CI
 
-## Analysing artifacts {#artifacts}
+## Analysing artifacts
