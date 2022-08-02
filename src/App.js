@@ -42,7 +42,7 @@ export default class App extends Lightning.Component {
       Text: {
         mount: 0.5,
         x: 960,
-        y: 380,
+        y: 720,
         text: {
           text: "Let's start Building!",
           fontFace: 'Regular',
