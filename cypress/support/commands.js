@@ -30,7 +30,3 @@ compareSnapshotCommand({
   scale: true,
   errorThreshold: 0.03,
 })
-
-// addMatchImageSnapshotCommand({
-//   capture: 'viewport',
-// })
