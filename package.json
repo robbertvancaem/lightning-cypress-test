@@ -8,7 +8,9 @@
     "build": "lng dist",
     "start": "lng dev",
     "cypress": "cypress run",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:diff:base": "cypress run --env type=base",
+    "cypress:diff:ci": "cypress run --env type=actual --config screenshotsFolder=cypress/snapshots/base"
   },
   "lint-staged": {
     "*.js": [

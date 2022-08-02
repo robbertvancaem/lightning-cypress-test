@@ -7,3 +7,4 @@ releases
 .tmp
 .env
 .vscode
+cypress/snapshots/actual

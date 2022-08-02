@@ -35,4 +35,8 @@ jobs:
             cypress/videos
           if-no-files-found: error
 
+      - name: Run image diff
+        run: npm run cypress:diff:ci
+
+
 
