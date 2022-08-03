@@ -17,64 +17,36 @@
  * limitations under the License.
  */
 
-import { Lightning, Utils } from '@lightningjs/sdk'
+import { Utils, Router } from '@lightningjs/sdk'
 
-export default class App extends Lightning.Component {
+import Home from './pages/Home'
+import Detail from './pages/Detail'
+
+const routes = {
+  root: 'home',
+  routes: [
+    {
+      path: 'home',
+      component: Home,
+    },
+    {
+      path: 'detail',
+      component: Detail,
+    },
+  ],
+}
+
+export default class App extends Router.App {
   static getFonts() {
-    return [{ family: 'Regular', url: Utils.asset('fonts/Roboto-Regular.ttf') }]
+    return [
+      {
+        family: 'Regular',
+        url: Utils.asset('fonts/Roboto-Regular.ttf'),
+      },
+    ]
   }
 
-  static _template() {
-    return {
-      Background: {
-        w: 1920,
-        h: 1080,
-        color: 0xfffbb03b,
-        src: Utils.asset('images/background.png'),
-      },
-      Logo: {
-        mountX: 0.5,
-        mountY: 1,
-        x: 960,
-        y: 600,
-        src: Utils.asset('images/logo.png'),
-      },
-      Text: {
-        mount: 0.5,
-        x: 960,
-        y: 720,
-        text: {
-          text: "Let's start Building!",
-          fontFace: 'Regular',
-          fontSize: 64,
-          textColor: 0xbbffffff,
-        },
-      },
-    }
-  }
-
-  _handleEnter() {
-    this.tag('Text').text.text = this._textToggle
-      ? "Let's start testing in CI!"
-      : "Let's start image diffing in CI!"
-    this._textToggle = !this._textToggle
-  }
-
-  _init() {
-    this._textToggle = true
-
-    this.tag('Background')
-      .animation({
-        duration: 15,
-        repeat: -1,
-        actions: [
-          {
-            t: '',
-            p: 'color',
-            v: { 0: { v: 0xfffbb03b }, 0.5: { v: 0xfff46730 }, 0.8: { v: 0xfffbb03b } },
-          },
-        ],
-      })
-      .start()
+  _setup() {
+    Router.startRouter(routes)
   }
 }

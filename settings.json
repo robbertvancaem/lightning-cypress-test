@@ -7,6 +7,7 @@
     "debug": false
   },
   "platformSettings": {
+    "inspector": true,
     "path": "./static",
     "log": true,
     "showVersion": true

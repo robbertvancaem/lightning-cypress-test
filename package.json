@@ -2,7 +2,8 @@
   "name": "com.metrological.app.LightningTest",
   "description": "Lightning Test",
   "dependencies": {
-    "@lightningjs/sdk": "^4.8.3"
+    "@lightningjs/sdk": "^4.8.3",
+    "@lightningjs/ui": "^1.2.7"
   },
   "scripts": {
     "build": "lng dist",
