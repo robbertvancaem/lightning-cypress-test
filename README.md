@@ -239,3 +239,9 @@ As can be seen in the `main.yml` file, so called 'artifacts' are stored. When yo
 
 ![Artifacts](/docs/images/artifacts.png?raw=true "Artifacts")
 
+
+
+https://user-images.githubusercontent.com/6898404/182582297-0994cbba-fe60-4fbf-a096-aecdd5645185.mp4
+
+
+
