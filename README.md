@@ -235,11 +235,11 @@ jobs:
 ```
 
 ## Analysing artifacts
-As can be seen in the `main.yml` file, so called 'artifacts' are stored. When you inspect a workflow run through the GUI, you'll see an "Artifacts" section where the 2 generated ZIP files can be found. If you click the filename, they will be downloaded. The `dist` ZIP file contains the generated bundle, and the `cypress-artifacts` ZIP file contains the screenshots Cypress generated. Cypress also records a video
+As can be seen in the `main.yml` file, so called 'artifacts' are stored. When you inspect a workflow run through the GUI, you'll see an "Artifacts" section where the 2 generated ZIP files can be found. If you click the filename, they will be downloaded. The `dist` ZIP file contains the generated bundle, and the `cypress-artifacts` ZIP file contains the screenshots Cypress generated.
 
 ![Artifacts](/docs/images/artifacts.png?raw=true "Artifacts")
 
-
+Cypress also records a video for every testfile. This enables you to see what Cypress 'saw' and help fix failing tests
 
 https://user-images.githubusercontent.com/6898404/182582297-0994cbba-fe60-4fbf-a096-aecdd5645185.mp4
 
