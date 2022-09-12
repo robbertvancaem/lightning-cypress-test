@@ -18,6 +18,8 @@
  */
 
 import { Lightning, Utils } from '@lightningjs/sdk'
+import { Grid } from '@lightningjs/ui'
+import Cell from '@/components/Cell'
 
 export default class App extends Lightning.Component {
   static getFonts() {
@@ -32,49 +34,46 @@ export default class App extends Lightning.Component {
         color: 0xfffbb03b,
         src: Utils.asset('images/background.png'),
       },
-      Logo: {
-        mountX: 0.5,
-        mountY: 1,
-        x: 960,
-        y: 600,
-        src: Utils.asset('images/logo.png'),
-      },
-      Text: {
+      Grid: {
+        x: 1920 / 2,
+        y: 200,
         mount: 0.5,
-        x: 960,
-        y: 120,
-        text: {
-          text: "Let's start Building!",
-          fontFace: 'Regular',
-          fontSize: 64,
-          textColor: 0xbbffffff,
+        type: Grid,
+        autoResize: true,
+        columns: 10,
+        rows: 10,
+        spacing: 15,
+        signals: {
+          onIndexChanged: true,
         },
       },
     }
   }
 
-  _handleEnter() {
-    this.tag('Text').text.text = this._textToggle
-      ? "Let's start testing in CI!"
-      : "Let's start image diffing in CI!"
-    this._textToggle = !this._textToggle
+  _handleKey({ key }) {
+    if (key !== 's') {
+      return
+    }
+    this.Grid.setIndex(Math.floor(Math.random() * 100))
+  }
+
+  onIndexChanged({ index }) {
+    console.log(index)
+  }
+
+  get Grid() {
+    return this.tag('Grid')
+  }
+
+  _getFocused() {
+    return this.Grid
   }
 
   _init() {
     this._textToggle = true
 
-    this.tag('Background')
-      .animation({
-        duration: 15,
-        repeat: -1,
-        actions: [
-          {
-            t: '',
-            p: 'color',
-            v: { 0: { v: 0xfffbb03b }, 0.5: { v: 0xfff46730 }, 0.8: { v: 0xfffbb03b } },
-          },
-        ],
-      })
-      .start()
+    this.Grid.items = new Array(100).fill({
+      type: Cell,
+    })
   }
 }
