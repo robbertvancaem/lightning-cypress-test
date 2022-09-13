@@ -35,13 +35,13 @@ export default class App extends Lightning.Component {
         src: Utils.asset('images/background.png'),
       },
       Grid: {
-        x: 1920 / 2,
-        y: 200,
+        x: 560,
+        y: 960 / 2,
         mount: 0.5,
         type: Grid,
         autoResize: true,
         columns: 10,
-        rows: 10,
+        direction: 'column',
         spacing: 15,
         signals: {
           onIndexChanged: true,
@@ -54,7 +54,7 @@ export default class App extends Lightning.Component {
     if (key !== 's') {
       return
     }
-    this.Grid.setIndex(Math.floor(Math.random() * 100))
+    this.Grid.setIndex(this.Grid.index + 1)
   }
 
   onIndexChanged({ index }) {
@@ -72,7 +72,7 @@ export default class App extends Lightning.Component {
   _init() {
     this._textToggle = true
 
-    this.Grid.items = new Array(100).fill({
+    this.Grid.items = new Array(50).fill({
       type: Cell,
     })
   }
