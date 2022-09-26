@@ -39,29 +39,45 @@ export default class App extends Lightning.Component {
         y: 600,
         src: Utils.asset('images/logo.png'),
       },
+      Input: {
+        w: 800,
+        h: 75,
+        x: 560,
+        y: 600,
+        rect: true,
+        color: 0xffffffff,
+      },
       Text: {
-        mount: 0.5,
-        x: 960,
-        y: 120,
+        x: 560,
+        y: 600,
+        w: 800,
+        h: 75,
         text: {
-          text: "Let's start Building!",
-          fontFace: 'Regular',
-          fontSize: 64,
-          textColor: 0xbbffffff,
+          textColor: 0xff000000,
+          text: '',
         },
       },
     }
   }
 
-  _handleEnter() {
-    this.tag('Text').text.text = this._textToggle
-      ? "Let's start testing in CI!"
-      : "Let's start image diffing in CI!"
-    this._textToggle = !this._textToggle
+  get Text() {
+    return this.tag('Text')
+  }
+
+  _handleKey({ key }) {
+    console.log(key)
+    const newText = this.Text.text.text + key
+
+    if (newText.length > 10) {
+      throw new Error(`Too much text: ${newText}`)
+    }
+
+    this.Text.text.text = newText
   }
 
   _init() {
     this._textToggle = true
+    console.log(this.Input)
 
     this.tag('Background')
       .animation({
