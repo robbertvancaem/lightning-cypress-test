@@ -69,7 +69,7 @@ export default class App extends Lightning.Component {
     const newText = this.Text.text.text + key
 
     if (newText.length > 10) {
-      throw new Error(`Too much text: ${newText}`)
+      throw new Error(`Too much text AGAIN: ${newText}`)
     }
 
     this.Text.text.text = newText

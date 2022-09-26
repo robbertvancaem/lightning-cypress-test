@@ -8,3 +8,4 @@ releases
 .env
 .vscode
 cypress/snapshots/actual
+deploy.sh
